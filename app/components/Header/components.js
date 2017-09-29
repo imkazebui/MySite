@@ -5,10 +5,13 @@ const Nav = styled.div`
   flex-direction: row;
   align-items: baseline;
   justify-content: center;
+  position: fixed;
+  width: 100%;
 `;
 
 const A = styled.a`
   padding: 10px;
+  color: white;
 `;
 
 const Logo = styled.a`
