@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Icon from 'components/Icon';
+import { ICONS } from 'components/Icon/listIcon';
 import { ViewSlider } from '../index';
 
 const slider1 = require('./slider1.jpg');
@@ -8,7 +9,12 @@ export class Slider extends React.PureComponent { // eslint-disable-line react/p
   render() {
     return (
       <ViewSlider background={slider1}>
-        {/* <img src={slider1} alt='img' /> */}
+        <div>
+          <Icon name={ICONS.FORWARD} color="white" />
+        </div>
+        <div>
+          <Icon name={ICONS.ARROW_BACK} color="white" />
+        </div>
       </ViewSlider>
     );
   }
