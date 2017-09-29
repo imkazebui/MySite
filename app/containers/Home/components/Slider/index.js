@@ -12,7 +12,7 @@ export class Slider extends React.PureComponent { // eslint-disable-line react/p
         <BtnSlide right>
           <Icon name={ICONS.FORWARD} color="white" />
         </BtnSlide>
-        <BtnSlide left>
+        <BtnSlide left className="hvr-radial-out">
           <Icon name={ICONS.ARROW_BACK} color="white" />
         </BtnSlide>
       </ViewSlider>
