@@ -60,7 +60,35 @@ const BtnSlide = styled.div`
 
 `;
 
+const ViewSlideDescribe = styled.div`
+  position: relative;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+`;
+
+const SlideTitle = styled.h1`
+  text-transform: uppercase;
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 1px;
+
+  transform: translateY(-100px);
+  opacity: 1;
+  transition: transform 3.33333s ease-out, opacity 5s ease, -webkit-transform 3.33333s ease-out;
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+`;
+
 export {
   ViewSlider,
   BtnSlide,
+  ViewSlideDescribe,
+  SlideTitle,
 };
