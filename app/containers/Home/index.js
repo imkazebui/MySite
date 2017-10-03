@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Slider from './components/Slider';
+import ChooseUs from './components/ChooseUs';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -12,6 +13,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <meta name="description" content="Home Page of MySite" />
         </Helmet>
         <Slider></Slider>
+        <ChooseUs></ChooseUs>
       </div>
     );
   }
