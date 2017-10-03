@@ -76,14 +76,14 @@ const Back = styled.div`
 
 const CardContainer = styled.div`
   perspective: 800px;
-  width: 20%;
+  width: 23%;
   min-height: 250px;
 `;
 
 const SectionBody = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 25px;
   justify-content: space-around;
 `;
 
