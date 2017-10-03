@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const ViewSlider = styled.div`
   background: ${({ background }) => `url(${background}) no-repeat center top`};
@@ -6,7 +6,7 @@ const ViewSlider = styled.div`
   height: -webkit-fill-available;
 `;
 
-const BtnSlide = styled.div`
+const BtnChangeSlide = styled.div`
   display: inline-block;
   padding: 10px;
   border-radius: 50%;
@@ -53,11 +53,13 @@ const BtnSlide = styled.div`
   &:hover, &:focus, &:active {
     color: white;
   }
-  &:hover:before, &:focus:before, &:active:before {
+  &:hover:before, &:focus:before {
     -webkit-transform: scale(2);
     transform: scale(2);
   }
-
+  &:active {
+    transform: scale(0.8);
+  }
 `;
 
 const ViewSlideDescribe = styled.div`
@@ -69,26 +71,42 @@ const ViewSlideDescribe = styled.div`
   color: white;
 `;
 
+const transformTopToBot = keyframes`
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const SlideTitle = styled.h1`
   text-transform: uppercase;
   font-size: 3em;
   margin: 0;
   letter-spacing: 1px;
 
-  transform: translateY(-100px);
-  opacity: 1;
-  transition: transform 3.33333s ease-out, opacity 5s ease, -webkit-transform 3.33333s ease-out;
+  animation: ${transformTopToBot} 0.4s linear 1;
 
-  &:hover {
-    opacity: 1;
-    transform: translateY(0);
-  }
+`;
 
+const SlideDescribe = styled.p`
+  animation: ${transformTopToBot} 0.3s linear 0.5s 1;
+  animation-fill-mode: both;
+`;
+
+const SlideBtn = styled.div`
+  animation: ${transformTopToBot} 0.3s linear 1s 1;
+  animation-fill-mode: both;
 `;
 
 export {
   ViewSlider,
-  BtnSlide,
+  BtnChangeSlide,
   ViewSlideDescribe,
   SlideTitle,
+  SlideDescribe,
+  SlideBtn,
 };

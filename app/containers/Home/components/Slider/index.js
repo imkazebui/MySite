@@ -2,7 +2,9 @@ import React from 'react';
 import Icon from 'components/Icon';
 import Button from 'components/MyButton';
 import { ICONS } from 'components/Icon/listIcon';
-import { ViewSlider, BtnSlide, ViewSlideDescribe, SlideTitle } from '../index';
+import { ViewSlider, BtnChangeSlide, ViewSlideDescribe,
+  SlideTitle, SlideDescribe, SlideBtn,
+} from '../index';
 
 const slider1 = require('./slider1.jpg');
 
@@ -10,18 +12,20 @@ export class Slider extends React.PureComponent { // eslint-disable-line react/p
   render() {
     return (
       <ViewSlider background={slider1}>
-        <BtnSlide right>
+        <BtnChangeSlide right>
           <Icon name={ICONS.FORWARD} color="white" />
-        </BtnSlide>
-        <BtnSlide left className="hvr-radial-out">
+        </BtnChangeSlide>
+        <BtnChangeSlide left>
           <Icon name={ICONS.ARROW_BACK} color="white" />
-        </BtnSlide>
+        </BtnChangeSlide>
         <ViewSlideDescribe>
           <SlideTitle>Dream Home Meet Reality</SlideTitle>
-          <p>We are a global branding agency helping companies to communicate</p>
-          <Button>
-            <p>Learn More</p>
-          </Button>
+          <SlideDescribe>We are a global branding agency helping companies to communicate</SlideDescribe>
+          <SlideBtn>
+            <Button>
+              Learn More
+            </Button>
+          </SlideBtn>
         </ViewSlideDescribe>
       </ViewSlider>
     );
