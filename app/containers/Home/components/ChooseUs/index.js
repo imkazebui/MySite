@@ -5,6 +5,8 @@ import { SectionHeader, Line, H2,
   Back,
   CardContainer,
   SectionBody,
+  ItemTitle,
+  ItemDescription,
 } from '../index';
 
 import text from './text';
@@ -24,8 +26,8 @@ export class ChooseUs extends React.PureComponent { // eslint-disable-line react
               <Card>
                 <Front>
                   <img src={item.image} alt="gg" />
-                  <h6>{item.title}</h6>
-                  <p>{item.description}</p>
+                  <ItemTitle>{item.title}</ItemTitle>
+                  <ItemDescription>{item.description}</ItemDescription>
                 </Front>
                 <Back>
                   <h3>{item.title}</h3>

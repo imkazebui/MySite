@@ -142,23 +142,6 @@ const Front = styled.div`
   > img {
     max-width: 100%;
   }
-
-  > h6 {
-    font-weight: 600;
-    font-size: 18px;
-    color: #3d3d3d;
-    letter-spacing: 0.5px;
-    margin: 0.85em 0em 0em 0em;
-  }
-
-  > p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #727272;
-    font-weight: 400;
-    margin-top: 0em;
-  }
-
 `;
 
 const Back = styled.div`
@@ -186,13 +169,43 @@ const SectionBody = styled.div`
   display: flex;
   flex-direction: row;
   padding: 25px 100px;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: ${({ wrap }) => wrap ? 'wrap' : 'inherit'};
 `;
 
 const Section = styled.section`
   background-color: ${({ color }) => color || 'inherit'};
-`
+`;
+
+const ItemTitle = styled.h6`
+  font-weight: 600;
+  font-size: 18px;
+  color: #3d3d3d;
+  letter-spacing: 0.5px;
+  margin: 0.85em 0em 0em 0em;
+`;
+
+const ItemDescription = styled.p`
+  font-size: 14px;
+  line-height: 1.8;
+  color: #727272;
+  font-weight: 400;
+  margin-top: 0em;
+`;
+
+const GreatePossibilitiesItem = styled.div`
+  width: 30%;
+`;
+
+const ItemLeft = styled.div`
+  float: left;
+  height: 100%;
+  margin-right: 15px;
+`;
+
+const GPItemTitle = ItemTitle.extend`
+  margin: 0px;
+`;
 
 export {
   ViewSlider,
@@ -210,4 +223,9 @@ export {
   CardContainer,
   SectionBody,
   Section,
+  GreatePossibilitiesItem,
+  ItemTitle,
+  ItemDescription,
+  ItemLeft,
+  GPItemTitle,
 };
