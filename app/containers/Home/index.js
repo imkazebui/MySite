@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Slider from './components/Slider';
 import ChooseUs from './components/ChooseUs';
 import GreatePosibilities from './components/GreatePosibilities';
+import Testimonials from './components/Testimonials';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -16,6 +17,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         <Slider></Slider>
         <ChooseUs></ChooseUs>
         <GreatePosibilities></GreatePosibilities>
+        <Testimonials></Testimonials>
       </div>
     );
   }

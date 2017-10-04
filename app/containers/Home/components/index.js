@@ -207,6 +207,11 @@ const GPItemTitle = ItemTitle.extend`
   margin: 0px;
 `;
 
+const SectionDescription = styled.p`
+  max-width: 700px;
+  text-align: center;
+`;
+
 export {
   ViewSlider,
   BtnChangeSlide,
@@ -228,4 +233,5 @@ export {
   ItemDescription,
   ItemLeft,
   GPItemTitle,
+  SectionDescription,
 };
