@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'components/Icon';
 import { SectionHeader, Line, H2,
   Card,
   Front,
@@ -9,21 +10,20 @@ import { SectionHeader, Line, H2,
 
 import text from './text';
 
-export class ChooseUs extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class GreatePosibilities extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <section>
         <SectionHeader>
           <H2>{text.title}</H2>
           <Line />
-          <p>{text.description}</p>
         </SectionHeader>
         <SectionBody>
           { text.listItems.map((item) => (
             <CardContainer>
               <Card>
                 <Front>
-                  <img src={item.image} alt="gg" />
+                  <Icon name={item.icon} viewBox={item.viewBox} size='50' color='#425CBB' />
                   <h6>{item.title}</h6>
                   <p>{item.description}</p>
                 </Front>
@@ -42,4 +42,4 @@ export class ChooseUs extends React.PureComponent { // eslint-disable-line react
   }
 }
 
-export default ChooseUs;
+export default GreatePosibilities;
