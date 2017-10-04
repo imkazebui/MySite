@@ -28,6 +28,7 @@ Icon.propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.number,
   color: PropTypes.string,
+  viewBox: PropTypes.string,
 };
 
 Icon.defaultProps = {
