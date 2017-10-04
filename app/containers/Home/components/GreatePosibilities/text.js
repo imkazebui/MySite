@@ -12,8 +12,8 @@ export default {
     {
       title: 'Digital marketing',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac neque at mi elementum gravida elit.',
-      icon: ICONS.MARKETING,
-      viewBox: 512,
+      icon: ICONS.SEO,
+      viewBox: 128,
     },
     {
       title: 'Google Analytics',
@@ -30,8 +30,8 @@ export default {
     {
       title: 'Web Design',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac neque at mi elementum gravida elit.',
-      icon: ICONS.WEB_DESIGN,
-      viewBox: 200,
+      icon: ICONS.INTERNET,
+      viewBox: 512,
     },
     {
       title: 'Web Development',
