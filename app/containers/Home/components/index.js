@@ -14,9 +14,9 @@ const BtnChangeSlide = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   top: 50%;
   position: absolute;
-  margin-left: ${({ left }) => left ? '20px' : 0};
-  margin-right: ${({ right }) => right ? '20px' : 0};
-  right: ${({ right }) => right ? 0 : 'auto'};
+  margin-left: ${({ left }) => (left ? '20px' : 0)};
+  margin-right: ${({ right }) => (right ? '20px' : 0)};
+  right: ${({ right }) => (right ? 0 : 'auto')};
 
   &:hover {
     cursor: pointer;
@@ -33,7 +33,7 @@ const BtnChangeSlide = styled.div`
   transition-duration: 0.3s;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;
@@ -51,10 +51,13 @@ const BtnChangeSlide = styled.div`
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: white;
   }
-  &:hover:before, &:focus:before {
+  &:hover:before,
+  &:focus:before {
     -webkit-transform: scale(2);
     transform: scale(2);
   }
@@ -90,7 +93,6 @@ const SlideTitle = styled.h1`
   letter-spacing: 1px;
 
   animation: ${transformTopToBot} 0.4s linear 1;
-
 `;
 
 const SlideDescribe = styled.p`
@@ -118,59 +120,12 @@ const H2 = styled.h2`
   letter-spacing: 1px;
 `;
 
-const Card = styled.div`
-  width: 100%;
-  min-height: 250px;
-  margin: 0 auto;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  &:hover {
-    transform: rotateY( 180deg );
-  }
-`;
-
-const Front = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  min-height: 250px;
-  backface-visibility: hidden;
-  text-align: center;
-  position: relative;
-  > img {
-    max-width: 100%;
-  }
-`;
-
-const Back = styled.div`
-  background-color: #425CBB;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotateY( 180deg );
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  padding: 0px 20px;
-  color: white;
-  > p { line-height: 1.8; }
-`;
-
-const CardContainer = styled.div`
-  perspective: 800px;
-  width: 23%;
-  min-height: 250px;
-`;
-
 const SectionBody = styled.div`
   display: flex;
   flex-direction: row;
   padding: 25px 100px;
   justify-content: space-between;
-  flex-wrap: ${({ wrap }) => wrap ? 'wrap' : 'inherit'};
+  flex-wrap: ${({ wrap }) => (wrap ? 'wrap' : 'inherit')};
 `;
 
 const Section = styled.section`
@@ -222,10 +177,6 @@ export {
   SectionHeader,
   Line,
   H2,
-  Card,
-  Front,
-  Back,
-  CardContainer,
   SectionBody,
   Section,
   GreatePossibilitiesItem,
