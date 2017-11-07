@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import View from 'components/View';
 
 const ViewSlider = styled.div`
@@ -76,35 +76,33 @@ const ViewSlideDescribe = styled.div`
   color: white;
 `;
 
-const transformTopToBot = keyframes`
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// const transformTopToBot = keyframes`
+//   from {
+//     transform: translateY(-50px);
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// `;
 
 const SlideTitle = styled.h1`
   text-transform: uppercase;
   font-size: 3em;
   margin: 0;
   letter-spacing: 1px;
-
-  animation: ${transformTopToBot} 0.4s linear 1;
 `;
 
-const SlideDescribe = styled.p`
-  animation: ${transformTopToBot} 0.3s linear 0.5s 1;
-  animation-fill-mode: both;
-`;
-
-const SlideBtn = styled.div`
-  animation: ${transformTopToBot} 0.3s linear 1s 1;
-  animation-fill-mode: both;
-`;
+// const SlideDescribe = styled.p`
+//   animation: ${transformTopToBot} 0.3s linear 0.5s 1;
+//   animation-fill-mode: both;
+// `;
+//
+// const SlideBtn = styled.div`
+//   animation: ${transformTopToBot} 0.3s linear 1s 1;
+//   animation-fill-mode: both;
+// `;
 
 const SectionHeader = styled(View)`
   align-items: center;
@@ -173,8 +171,8 @@ export {
   BtnChangeSlide,
   ViewSlideDescribe,
   SlideTitle,
-  SlideDescribe,
-  SlideBtn,
+  // SlideDescribe,
+  // SlideBtn,
   SectionHeader,
   Line,
   H2,

@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Slider from './components/Slider/slider';
-// import ChooseUs from './components/ChooseUs';
-// import GreatePosibilities from './components/GreatePosibilities';
-// import Testimonials from './components/Testimonials';
+import ChooseUs from './components/ChooseUs';
+import GreatePosibilities from './components/GreatePosibilities';
+import Testimonials from './components/Testimonials';
 
 // eslint-disable-line react/prefer-stateless-function
 export class HomePage extends React.PureComponent {
@@ -16,9 +16,9 @@ export class HomePage extends React.PureComponent {
           <meta name="description" content="Home Page of MySite" />
         </Helmet>
         <Slider />
-        {/* <ChooseUs></ChooseUs>
-        <GreatePosibilities></GreatePosibilities>
-        <Testimonials></Testimonials> */}
+        <ChooseUs />
+        <GreatePosibilities />
+        <Testimonials />
       </div>
     );
   }

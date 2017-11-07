@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import Icon from 'components/Icon';
+import Button from 'components/MyButton';
 import { ICONS } from 'components/Icon/listIcon';
-import { BtnChangeSlide } from '../index';
+import {
+  BtnChangeSlide,
+  ViewSlider,
+  ViewSlideDescribe,
+  SlideTitle,
+} from '../index';
+
+const slider1 = require('./slider1.jpg');
+const slider2 = require('./slider2.jpg');
+const slider3 = require('./slider3.jpg');
 
 export default class Slider extends Component {
   constructor(props) {
@@ -52,14 +62,52 @@ export default class Slider extends Component {
 
   renderSlide = (i) => {
     switch (i) {
+      case 0:
+        return (
+          <ViewSlider background={slider1}>
+            <ViewSlideDescribe>
+              <SlideTitle className="title-animation-1">
+                Dream Home Meet Reality
+              </SlideTitle>
+              <p className="describe-top-to-bot">
+                We are a global branding agency helping companies to communicate
+              </p>
+              <div className="btn-top-to-bot">
+                <Button>Learn More</Button>
+              </div>
+            </ViewSlideDescribe>
+          </ViewSlider>
+        );
       case 1:
-        return 1;
+        return (
+          <ViewSlider background={slider2}>
+            <ViewSlideDescribe>
+              <SlideTitle>Dream Home Meet Reality</SlideTitle>
+              <p className="title-animation-1">
+                We are a global branding agency helping companies to communicate
+              </p>
+              <div>
+                <Button>Learn More</Button>
+              </div>
+            </ViewSlideDescribe>
+          </ViewSlider>
+        );
       case 2:
-        return 2;
-      case 3:
-        return 3;
+        return (
+          <ViewSlider background={slider3}>
+            <ViewSlideDescribe>
+              <SlideTitle>Dream Home Meet Reality</SlideTitle>
+              <p>
+                We are a global branding agency helping companies to communicate
+              </p>
+              <div>
+                <Button>Learn More</Button>
+              </div>
+            </ViewSlideDescribe>
+          </ViewSlider>
+        );
       default:
-        return 1;
+        return 0;
     }
   };
 
