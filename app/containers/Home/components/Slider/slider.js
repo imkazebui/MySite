@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Icon from 'components/Icon';
+import { ICONS } from 'components/Icon/listIcon';
+import { BtnChangeSlide } from '../index';
 
 export default class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfSlide: [1, 2, 3, 4, 5, 6, 7, 8],
+      numberOfSlide: [1, 2, 3],
       slideActive: 0,
       viewWidth: window.innerWidth,
     };
@@ -27,15 +30,43 @@ export default class Slider extends Component {
     this.setState({ viewWidth: window.innerWidth, slideActive: 0 });
   };
 
+  preSlide = () => {
+    const { slideActive, numberOfSlide } = this.state;
+    const lastSlide = numberOfSlide.length - 1;
+
+    if (slideActive > 0) {
+      return this.setState({ slideActive: slideActive - 1 });
+    }
+    return this.setState({ slideActive: lastSlide });
+  };
+
+  nextSlide = () => {
+    const { slideActive, numberOfSlide } = this.state;
+    const lastSlide = numberOfSlide.length - 1;
+
+    if (slideActive < lastSlide) {
+      return this.setState({ slideActive: slideActive + 1 });
+    }
+    return this.setState({ slideActive: 0 });
+  };
+
+  renderSlide = (i) => {
+    switch (i) {
+      case 1:
+        return 1;
+      case 2:
+        return 2;
+      case 3:
+        return 3;
+      default:
+        return 1;
+    }
+  };
+
   render() {
     const { numberOfSlide, slideActive, viewWidth } = this.state;
     return (
       <div>
-        <nav className="nav">
-          <h1>Gummy slider</h1>
-          <p className="author">by Lewi Hussey</p>
-        </nav>
-
         <div
           className="slider"
           style={{
@@ -59,7 +90,7 @@ export default class Slider extends Component {
                 }}
                 className={slideActive === i ? 'slide active' : 'slide'}
               >
-                {i}
+                {this.renderSlide(i)}
               </div>
             ))}
           </div>
@@ -72,6 +103,15 @@ export default class Slider extends Component {
                 onClick={() => this.setActive(i)}
               />
             ))}
+          </nav>
+
+          <nav>
+            <BtnChangeSlide right onClick={this.nextSlide}>
+              <Icon name={ICONS.FORWARD} color="white" />
+            </BtnChangeSlide>
+            <BtnChangeSlide left onClick={this.preSlide}>
+              <Icon name={ICONS.ARROW_BACK} color="white" />
+            </BtnChangeSlide>
           </nav>
         </div>
       </div>

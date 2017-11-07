@@ -29,8 +29,8 @@ const BtnChangeSlide = styled.div`
   overflow: hidden;
   -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 
   &:before {
     content: '';
@@ -46,8 +46,8 @@ const BtnChangeSlide = styled.div`
     transform: scale(0);
     -webkit-transition-property: transform;
     transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
@@ -61,8 +61,9 @@ const BtnChangeSlide = styled.div`
     -webkit-transform: scale(2);
     transform: scale(2);
   }
-  &:active {
-    transform: scale(0.8);
+  &:active,
+  &:active:before {
+    transform: scale(0.75);
   }
 `;
 
