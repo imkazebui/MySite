@@ -64,15 +64,17 @@ export default class Slider extends Component {
     switch (i) {
       case 0:
         return (
-          <ViewSlider background={slider1}>
+          <ViewSlider background={slider3}>
             <ViewSlideDescribe>
               <SlideTitle className="title-animation-1">
                 Dream Home Meet Reality
               </SlideTitle>
-              <p className="describe-top-to-bot">
+              <p className="describe-animation-1">
                 We are a global branding agency helping companies to communicate
+                <br />
+                through vision and imagination.
               </p>
-              <div className="btn-top-to-bot">
+              <div className="btn-animation-1">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
@@ -82,11 +84,15 @@ export default class Slider extends Component {
         return (
           <ViewSlider background={slider2}>
             <ViewSlideDescribe>
-              <SlideTitle>Dream Home Meet Reality</SlideTitle>
-              <p className="title-animation-1">
+              <SlideTitle className="title-animation-1">
+                {"Let's get started"}
+              </SlideTitle>
+              <p className="describe-animation-1">
                 We are a global branding agency helping companies to communicate
+                <br />
+                through vision and imagination.
               </p>
-              <div>
+              <div className="btn-animation-1">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
@@ -94,13 +100,15 @@ export default class Slider extends Component {
         );
       case 2:
         return (
-          <ViewSlider background={slider3}>
-            <ViewSlideDescribe>
-              <SlideTitle>Dream Home Meet Reality</SlideTitle>
-              <p>
+          <ViewSlider background={slider1}>
+            <ViewSlideDescribe className="title-animation-1">
+              <SlideTitle>Making Dream Possible</SlideTitle>
+              <p className="describe-animation-1">
                 We are a global branding agency helping companies to communicate
+                <br />
+                through vision and imagination.
               </p>
-              <div>
+              <div className="btn-animation-1">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
