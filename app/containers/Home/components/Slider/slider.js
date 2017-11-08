@@ -64,17 +64,17 @@ export default class Slider extends Component {
     switch (i) {
       case 0:
         return (
-          <ViewSlider background={slider3}>
+          <ViewSlider background={slider2}>
             <ViewSlideDescribe>
               <SlideTitle className="title-animation-1">
-                Dream Home Meet Reality
+                {"Let's get started"}
               </SlideTitle>
-              <p className="describe-animation-1">
+              <p className="describe-animation-1 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-1">
+              <div className="btn-animation-1 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
@@ -82,17 +82,15 @@ export default class Slider extends Component {
         );
       case 1:
         return (
-          <ViewSlider background={slider2}>
-            <ViewSlideDescribe>
-              <SlideTitle className="title-animation-1">
-                {"Let's get started"}
-              </SlideTitle>
-              <p className="describe-animation-1">
+          <ViewSlider background={slider1}>
+            <ViewSlideDescribe className="title-animation-1">
+              <SlideTitle>Making Dream Possible</SlideTitle>
+              <p className="describe-animation-1 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-1">
+              <div className="btn-animation-1 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
@@ -100,15 +98,17 @@ export default class Slider extends Component {
         );
       case 2:
         return (
-          <ViewSlider background={slider1}>
-            <ViewSlideDescribe className="title-animation-1">
-              <SlideTitle>Making Dream Possible</SlideTitle>
-              <p className="describe-animation-1">
+          <ViewSlider background={slider3}>
+            <ViewSlideDescribe>
+              <SlideTitle className="title-animation-1">
+                Dream Home Meet Reality
+              </SlideTitle>
+              <p className="describe-animation-1 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-1">
+              <div className="btn-animation-1 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>

@@ -76,33 +76,16 @@ const ViewSlideDescribe = styled.div`
   color: white;
 `;
 
-// const transformTopToBot = keyframes`
-//   from {
-//     transform: translateY(-50px);
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// `;
-
 const SlideTitle = styled.h1`
   text-transform: uppercase;
   font-size: 3em;
+  font-weight: 700;
+  line-height: 76px;
+  text-decoration: none solid rgb(255, 255, 255);
+  word-break: 0px;
   margin: 0;
   letter-spacing: 1px;
 `;
-
-// const SlideDescribe = styled.p`
-//   animation: ${transformTopToBot} 0.3s linear 0.5s 1;
-//   animation-fill-mode: both;
-// `;
-//
-// const SlideBtn = styled.div`
-//   animation: ${transformTopToBot} 0.3s linear 1s 1;
-//   animation-fill-mode: both;
-// `;
 
 const SectionHeader = styled(View)`
   align-items: center;
@@ -171,8 +154,6 @@ export {
   BtnChangeSlide,
   ViewSlideDescribe,
   SlideTitle,
-  // SlideDescribe,
-  // SlideBtn,
   SectionHeader,
   Line,
   H2,
