@@ -40,11 +40,56 @@
   }
 }
 
+@keyframes zoomOut {
+  from,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(3, 3, 3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeZoomIn {
+  from,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(3, 3, 3);
+  }
+}
+
 .slider {
   position: relative;
   width: 100%;
   height: -webkit-fill-available;
   overflow: hidden;
+
+  .slide1 {
+    align-items: flex-start;
+    left: 10%;
+    top: 35%;
+  }
+  .slide3 {
+    top: 35%;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .slider-inner {
@@ -66,7 +111,6 @@
   height: 100%;
   background-visibility: hidden;
 
-  text-align: center;
   color: white;
 
   left: 0;
@@ -78,19 +122,48 @@
     animation-name: fadeIn;
     animation-duration: 2s;
     .title-animation-1 {
-      animation: transformTopToBot 1s linear 1;
+      animation-delay: 1s;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-name: zoomOut;
     }
     .describe-animation-1 {
-      animation: transformTopToBot 1.5s linear 1;
+      animation-delay: 1.4s;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: transformTopToBot;
     }
     .btn-animation-1 {
+      animation-delay: 1.9s;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: transformTopToBot;
+    }
+
+    .title-animation-2 {
+      animation: transformTopToBot 1s linear 1;
+    }
+    .describe-animation-2 {
+      animation: transformTopToBot 1.5s linear 1;
+    }
+    .btn-animation-2 {
       animation: transformTopToBot 2s linear 1;
     }
   }
 
-  .title-animation-1,
+  .title-animation-1 {
+    animation-name: fadeZoomIn;
+    animation-duration: 1s;
+  }
   .describe-animation-1,
   .btn-animation-1 {
+    animation-name: fadeOutUp;
+    animation-duration: 1s;
+  }
+
+  .title-animation-2,
+  .describe-animation-2,
+  .btn-animation-2 {
     animation-name: fadeOutUp;
     animation-duration: 1s;
   }

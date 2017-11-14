@@ -64,8 +64,8 @@ export default class Slider extends Component {
     switch (i) {
       case 0:
         return (
-          <ViewSlider background={slider2}>
-            <ViewSlideDescribe>
+          <ViewSlider background={slider1}>
+            <ViewSlideDescribe className="slide1">
               <SlideTitle className="title-animation-1">
                 {"Let's get started"}
               </SlideTitle>
@@ -82,15 +82,17 @@ export default class Slider extends Component {
         );
       case 1:
         return (
-          <ViewSlider background={slider1}>
-            <ViewSlideDescribe className="title-animation-1">
-              <SlideTitle>Making Dream Possible</SlideTitle>
-              <p className="describe-animation-1 slide-describe">
+          <ViewSlider background={slider2}>
+            <ViewSlideDescribe className="slide1">
+              <SlideTitle className="title-animation-2">
+                Making Dream Possible
+              </SlideTitle>
+              <p className="describe-animation-2 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-1 slide-btn">
+              <div className="btn-animation-2 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>
@@ -99,16 +101,16 @@ export default class Slider extends Component {
       case 2:
         return (
           <ViewSlider background={slider3}>
-            <ViewSlideDescribe>
-              <SlideTitle className="title-animation-1">
+            <ViewSlideDescribe className="slide3">
+              <SlideTitle className="title-animation-3">
                 Dream Home Meet Reality
               </SlideTitle>
-              <p className="describe-animation-1 slide-describe">
+              <p className="describe-animation-3 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-1 slide-btn">
+              <div className="btn-animation-3 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>

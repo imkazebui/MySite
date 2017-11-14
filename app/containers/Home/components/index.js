@@ -69,10 +69,8 @@ const BtnChangeSlide = styled.div`
 
 const ViewSlideDescribe = styled.div`
   position: relative;
-  top: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white;
 `;
 
