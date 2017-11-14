@@ -105,12 +105,12 @@ export default class Slider extends Component {
               <SlideTitle className="title-animation-3">
                 Dream Home Meet Reality
               </SlideTitle>
-              <p className="describe-animation-3 slide-describe">
+              <p className="describe-animation-1 slide-describe">
                 We are a global branding agency helping companies to communicate
                 <br />
                 through vision and imagination.
               </p>
-              <div className="btn-animation-3 slide-btn">
+              <div className="btn-animation-1 slide-btn">
                 <Button>Learn More</Button>
               </div>
             </ViewSlideDescribe>

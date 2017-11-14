@@ -149,6 +149,13 @@
     .btn-animation-2 {
       animation: transformTopToBot 2s linear 1;
     }
+
+    .title-animation-3 {
+      animation-delay: 1s;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-name: transformTopToBot;
+    }
   }
 
   .title-animation-1 {
@@ -163,9 +170,10 @@
 
   .title-animation-2,
   .describe-animation-2,
+  .title-animation-3,
   .btn-animation-2 {
     animation-name: fadeOutUp;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
   }
 }
 
