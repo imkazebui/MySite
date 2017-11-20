@@ -7,6 +7,7 @@ const Nav = styled.div`
   justify-content: center;
   position: fixed;
   width: 100%;
+  z-index: 9999;
 `;
 
 const A = styled.a`
@@ -18,8 +19,4 @@ const Logo = styled.a`
   padding: 10px 30px;
 `;
 
-export {
-  Nav,
-  A,
-  Logo,
-};
+export { Nav, A, Logo };
