@@ -124,7 +124,7 @@ export default class Slider extends Component {
   render() {
     const { numberOfSlide, slideActive, viewWidth } = this.state;
     return (
-      <div>
+      <div className="intro">
         <div
           className="slider"
           style={{

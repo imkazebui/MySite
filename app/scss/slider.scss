@@ -98,149 +98,151 @@
   }
 }
 
-.slider {
-  position: relative;
-  width: 100%;
-  height: -webkit-fill-available;
-  overflow: hidden;
+.intro {
+  .slider {
+    position: relative;
+    width: 100%;
+    height: -webkit-fill-available;
+    overflow: hidden;
 
-  .slide1 {
-    align-items: flex-start;
-    left: 10%;
-    top: 35%;
+    .slide1 {
+      align-items: flex-start;
+      left: 10%;
+      top: 35%;
+    }
+    .slide3 {
+      top: 35%;
+      text-align: center;
+      align-items: center;
+    }
   }
-  .slide3 {
-    top: 35%;
-    text-align: center;
-    align-items: center;
+
+  .slider-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    transition-duration: 0s;
+    background-visibility: hidden;
+    transition-delay: 0.5s;
+
+    transform: translateZ(0);
   }
-}
 
-.slider-inner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+  .slide {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-visibility: hidden;
 
-  transition-duration: 0s;
-  background-visibility: hidden;
-  transition-delay: 0.5s;
+    color: white;
 
-  transform: translateZ(0);
-}
+    left: 0;
 
-.slide {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  background-visibility: hidden;
-
-  color: white;
-
-  left: 0;
-
-  animation-name: fadeOut;
-  animation-duration: 2s;
-
-  &.active {
-    animation-name: fadeIn;
+    animation-name: fadeOut;
     animation-duration: 2s;
-    .title-animation-1 {
-      animation-delay: 1s;
-      animation-duration: 0.4s;
-      animation-fill-mode: both;
-      animation-name: zoomOut;
-    }
-    .describe-animation-1 {
-      animation-delay: 1.4s;
-      animation-duration: 0.5s;
-      animation-fill-mode: both;
-      animation-name: transformTopToBot;
-    }
-    .btn-animation-1 {
-      animation-delay: 1.9s;
-      animation-duration: 0.5s;
-      animation-fill-mode: both;
-      animation-name: transformTopToBot;
-    }
-
-    .title-animation-2 {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 1.5s 1s steps(90) both;
-    }
-    .describe-animation-2 {
-      animation: transformTopToBot 0.5s 1.4s 1 linear both;
-    }
-    .btn-animation-2 {
-      animation: transformTopToBot 0.5s 1.9s 1 linear both;
-    }
-
-    .title-animation-3 {
-      animation-delay: 1s;
-      animation-duration: 0.4s;
-      animation-fill-mode: both;
-      animation-name: transformTopToBot;
-    }
-  }
-
-  .title-animation-1 {
-    animation-name: fadeZoomIn;
-    animation-duration: 1s;
-  }
-  .describe-animation-1,
-  .btn-animation-1 {
-    animation-name: fadeOutUp;
-    animation-duration: 1s;
-  }
-
-  .title-animation-2,
-  .describe-animation-2,
-  .title-animation-3,
-  .btn-animation-2 {
-    animation-name: fadeOutUp;
-    animation-duration: 0.5s;
-  }
-}
-
-.slider-nav {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 20px;
-  text-align: center;
-
-  > div {
-    float: left;
-    width: 10px;
-    height: 10px;
-    border: 1px solid white;
-    z-index: 2;
-    display: inline-block;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    opacity: 0.5;
-
-    transition-duration: 0.25s;
-    background-color: transparent;
-
-    &:hover {
-      opacity: 1;
-    }
 
     &.active {
-      background-color: white;
-      transform: scale(2);
-      opacity: 1;
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      .title-animation-1 {
+        animation-delay: 1s;
+        animation-duration: 0.4s;
+        animation-fill-mode: both;
+        animation-name: zoomOut;
+      }
+      .describe-animation-1 {
+        animation-delay: 1.4s;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: transformTopToBot;
+      }
+      .btn-animation-1 {
+        animation-delay: 1.9s;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: transformTopToBot;
+      }
+
+      .title-animation-2 {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 1.5s 1s steps(90) both;
+      }
+      .describe-animation-2 {
+        animation: transformTopToBot 0.5s 1.4s 1 linear both;
+      }
+      .btn-animation-2 {
+        animation: transformTopToBot 0.5s 1.9s 1 linear both;
+      }
+
+      .title-animation-3 {
+        animation-delay: 1s;
+        animation-duration: 0.4s;
+        animation-fill-mode: both;
+        animation-name: transformTopToBot;
+      }
+    }
+
+    .title-animation-1 {
+      animation-name: fadeZoomIn;
+      animation-duration: 1s;
+    }
+    .describe-animation-1,
+    .btn-animation-1 {
+      animation-name: fadeOutUp;
+      animation-duration: 1s;
+    }
+
+    .title-animation-2,
+    .describe-animation-2,
+    .title-animation-3,
+    .btn-animation-2 {
+      animation-name: fadeOutUp;
+      animation-duration: 0.5s;
     }
   }
-}
 
-.slide-describe {
-  font-size: 14px;
-  line-height: 28px;
-  white-space: nowrap;
-  word-spacing: 0px;
+  .slider-nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    text-align: center;
+
+    > div {
+      float: left;
+      width: 10px;
+      height: 10px;
+      border: 1px solid white;
+      z-index: 2;
+      display: inline-block;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      opacity: 0.5;
+
+      transition-duration: 0.25s;
+      background-color: transparent;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.active {
+        background-color: white;
+        transform: scale(2);
+        opacity: 1;
+      }
+    }
+  }
+
+  .slide-describe {
+    font-size: 14px;
+    line-height: 28px;
+    white-space: nowrap;
+    word-spacing: 0px;
+  }
 }

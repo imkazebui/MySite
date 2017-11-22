@@ -1,0 +1,54 @@
+$yellow: #f1c40f;
+
+.testmionials {
+  .slide-content-left {
+    flex: 1;
+  }
+  .slide-content-right {
+    flex: 1;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    padding: 40px;
+    color: white;
+  }
+
+  .slider {
+    // background-color: white;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    transition-duration: 1s;
+    background-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    // background-color: $yellow;
+    background-visibility: hidden;
+
+    text-align: center;
+    // line-height: 600px;
+    // font-size: 5rem;
+    // color: white;
+
+    left: 0;
+
+    &.active {
+    }
+  }
+}
