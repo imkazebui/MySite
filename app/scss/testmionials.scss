@@ -5,14 +5,6 @@
   .slide-content-right {
     flex: 1;
   }
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    padding: 40px;
-    color: white;
-  }
 
   .slider {
     position: relative;
@@ -49,11 +41,15 @@
   #testimonials-slide {
     padding-left: 75px;
     padding-right: 75px;
+    min-height: 300px;
   }
   .slide-content-right {
     margin-left: 60px;
+    // line-height: 0;
     img {
       width: 100%;
+      max-height: 300px;
+      // line-height: 0;
     }
   }
 
@@ -74,7 +70,7 @@
 
   .testimonials-info {
     padding: 30px 0px;
-    padding-bottom: 90px;
+    // padding-bottom: 90px;
   }
 
   .testimonials-name {

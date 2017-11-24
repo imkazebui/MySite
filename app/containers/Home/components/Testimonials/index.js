@@ -41,7 +41,7 @@ export default class Testimonials extends Component {
   updateViewWidth = () => {
     const el = document.getElementById('testimonials-view');
     const { width } = el.getBoundingClientRect();
-    const e = document.getElementById('testimonials-slide');
+    const e = document.getElementById('test');
     const { height } = e.getBoundingClientRect();
     console.log('height', height);
     this.setState({ viewWidth: width, slideActive: 0, slideHeight: height });
@@ -73,7 +73,7 @@ export default class Testimonials extends Component {
       case 0:
         return (
           <View row id="testimonials-slide">
-            <View className="slide-content-left">
+            <View className="slide-content-left" id="test">
               <div className="quote">{review}</div>
               <View row className="testimonials-info">
                 <View>
@@ -86,9 +86,9 @@ export default class Testimonials extends Component {
               </View>
             </View>
             <View className="slide-content-right">
-              <View>
+              {/* <View>
                 <View>p</View>
-              </View>
+              </View> */}
               <img alt={name} src={imgVideo} id="img-video" />
             </View>
           </View>
