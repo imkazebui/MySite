@@ -43,6 +43,7 @@ export default class Testimonials extends Component {
     const { width } = el.getBoundingClientRect();
     const e = document.getElementById('testimonials-slide');
     const { height } = e.getBoundingClientRect();
+    console.log('height', height);
     this.setState({ viewWidth: width, slideActive: 0, slideHeight: height });
   };
 
@@ -67,18 +68,29 @@ export default class Testimonials extends Component {
   };
 
   renderSlide = (i) => {
-    const { avatar, name, position, review, video } = text.listItems[i];
+    const { avatar, name, position, review, imgVideo } = text.listItems[i];
     switch (i) {
       case 0:
         return (
           <View row id="testimonials-slide">
             <View className="slide-content-left">
-              <p>{review}</p>
-              <p>{name}</p>
-              <p>{position}</p>
-              <img alt={name} src={avatar} />
+              <div className="quote">{review}</div>
+              <View row className="testimonials-info">
+                <View>
+                  <img alt={name} src={avatar} className="avatar" />
+                </View>
+                <View className="testimonials-name">
+                  <p>{name}</p>
+                  <p>{position}</p>
+                </View>
+              </View>
             </View>
-            <View className="slide-content-right">Con lon</View>
+            <View className="slide-content-right">
+              <View>
+                <View>p</View>
+              </View>
+              <img alt={name} src={imgVideo} id="img-video" />
+            </View>
           </View>
         );
       case 1:

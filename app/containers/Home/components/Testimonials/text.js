@@ -1,4 +1,5 @@
 import avatar from './avatar.jpg';
+import imgVideo1 from './img_video_1.jpg';
 
 export default {
   title: 'TESTIMONIALS',
@@ -9,6 +10,7 @@ export default {
       name: 'Cristiano Ronaldo',
       position: 'Designer',
       avatar,
+      imgVideo: imgVideo1,
       video: 'https://www.youtube.com/watch?v=GpJ36KzHJG4',
       review:
         'Foxin has impacted the way our business operates, so much so that it now contributes to our strategy going forward as it relates to growth, expansion, and new opportunities for our clients and our employees.',
@@ -17,6 +19,7 @@ export default {
       name: 'Cristiano Ronaldo',
       position: 'Designer',
       avatar,
+      imgVideo: imgVideo1,
       video: 'https://www.youtube.com/watch?v=GpJ36KzHJG4',
       review:
         'Foxin has impacted the way our business operates, so much so that it now contributes to our strategy going forward as it relates to growth, expansion, and new opportunities for our clients and our employees.',
@@ -25,6 +28,7 @@ export default {
       name: 'Cristiano Ronaldo',
       position: 'Designer',
       avatar,
+      imgVideo: imgVideo1,
       video: 'https://www.youtube.com/watch?v=GpJ36KzHJG4',
       review:
         'Foxin has impacted the way our business operates, so much so that it now contributes to our strategy going forward as it relates to growth, expansion, and new opportunities for our clients and our employees.',
