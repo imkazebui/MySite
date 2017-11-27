@@ -22,6 +22,10 @@ export default class Testimonials extends Component {
       slideActive: 0,
       viewWidth: window.innerWidth,
       slideHeight: 300,
+      videoImg: {
+        width: 300,
+        height: 300,
+      },
     };
   }
 
@@ -34,6 +38,10 @@ export default class Testimonials extends Component {
     window.removeEventListner('resize', this.updateViewWidth);
   }
 
+  onLoadVideoImg = () => {
+    this.updateViewWidth();
+  };
+
   setActive = (i) => {
     this.setState({ slideActive: i });
   };
@@ -43,8 +51,16 @@ export default class Testimonials extends Component {
     const { width } = el.getBoundingClientRect();
     const e = document.getElementById('test');
     const { height } = e.getBoundingClientRect();
-    console.log('height', height);
-    this.setState({ viewWidth: width, slideActive: 0, slideHeight: height });
+    const elImg = document.getElementById('img-video');
+    this.setState({
+      viewWidth: width,
+      slideActive: 0,
+      slideHeight: height,
+      videoImg: {
+        width: elImg.width,
+        height: elImg.height,
+      },
+    });
   };
 
   preSlide = () => {
@@ -69,6 +85,7 @@ export default class Testimonials extends Component {
 
   renderSlide = (i) => {
     const { avatar, name, position, review, imgVideo } = text.listItems[i];
+    const { width, height } = this.state.videoImg;
     switch (i) {
       case 0:
         return (
@@ -86,10 +103,19 @@ export default class Testimonials extends Component {
               </View>
             </View>
             <View className="slide-content-right">
-              {/* <View>
-                <View>p</View>
-              </View> */}
-              <img alt={name} src={imgVideo} id="img-video" />
+              <View className="player-view" style={{ width, height }}>
+                <View className="circle">
+                  <View className="play">
+                    <Icon name={ICONS.PLAY} color="#425CBB" size="16" />
+                  </View>
+                </View>
+              </View>
+              <img
+                alt={name}
+                src={imgVideo}
+                id="img-video"
+                onLoad={this.onLoadVideoImg}
+              />
             </View>
           </View>
         );
@@ -143,10 +169,19 @@ export default class Testimonials extends Component {
             </div>
 
             <nav>
-              <BtnChangeSlide right onClick={this.nextSlide}>
+              <BtnChangeSlide
+                right
+                onClick={this.nextSlide}
+                className="btn-change-slide"
+              >
                 <Icon name={ICONS.FORWARD} color="white" />
               </BtnChangeSlide>
-              <BtnChangeSlide left onClick={this.preSlide}>
+
+              <BtnChangeSlide
+                left
+                onClick={this.preSlide}
+                className="btn-change-slide"
+              >
                 <Icon name={ICONS.ARROW_BACK} color="white" />
               </BtnChangeSlide>
             </nav>
