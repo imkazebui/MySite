@@ -9,7 +9,6 @@ import {
   SectionBody,
   Section,
   SectionDescription,
-  BtnChangeSlide,
 } from '../index';
 
 import text from './text';
@@ -169,21 +168,13 @@ export default class Testimonials extends Component {
             </div>
 
             <nav>
-              <BtnChangeSlide
-                right
-                onClick={this.nextSlide}
-                className="btn-change-slide"
-              >
-                <Icon name={ICONS.FORWARD} color="white" />
-              </BtnChangeSlide>
+              <div onClick={this.nextSlide} className="btn-change-slide right">
+                <Icon name={ICONS.FORWARD} size="20" />
+              </div>
 
-              <BtnChangeSlide
-                left
-                onClick={this.preSlide}
-                className="btn-change-slide"
-              >
-                <Icon name={ICONS.ARROW_BACK} color="white" />
-              </BtnChangeSlide>
+              <div onClick={this.preSlide} className="btn-change-slide">
+                <Icon name={ICONS.ARROW_BACK} size="20" />
+              </div>
             </nav>
           </div>
         </SectionBody>
