@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Icon from 'components/Icon';
-import View from 'components/View';
 import { ICONS } from 'components/Icon/listIcon';
 
 import { SectionHeader, Line, H2, Section, SectionDescription } from '../index';
@@ -8,11 +7,11 @@ import { SectionHeader, Line, H2, Section, SectionDescription } from '../index';
 import {
   Container,
   ContainerBody,
-  ContainerFooter,
   Image,
   SectionBody,
   Name,
   Position,
+  OverLay,
 } from './styles';
 
 import text from './text';
@@ -65,17 +64,18 @@ export default class Testimonials extends Component {
             src={avatar}
             onLoad={i === 0 ? this.onLoadImg : false}
           />
+          <OverLay />
         </ContainerBody>
-        <ContainerFooter>
+        <div>
           <Name>{name}</Name>
           <Position>{position}</Position>
-        </ContainerFooter>
+        </div>
       </Container>
     );
   };
 
   render() {
-    const { numberOfSlide, slideActive, viewWidth, src, isShow } = this.state;
+    const { slideActive, viewWidth } = this.state;
     return (
       <Section>
         <SectionHeader>
