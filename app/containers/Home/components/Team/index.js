@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import Icon from 'components/Icon';
 import View from 'components/View';
 import { ICONS } from 'components/Icon/listIcon';
-import { Video } from './video';
+
+import { SectionHeader, Line, H2, Section, SectionDescription } from '../index';
 
 import {
-  SectionHeader,
-  Line,
-  H2,
+  Container,
+  ContainerBody,
+  ContainerFooter,
+  Image,
   SectionBody,
-  Section,
-  SectionDescription,
-} from '../index';
+  Name,
+  Position,
+} from './styles';
 
 import text from './text';
 
@@ -21,49 +23,15 @@ export default class Testimonials extends Component {
     this.state = {
       numberOfSlide: [1, 2, 3],
       slideActive: 0,
-      viewWidth: window.innerWidth,
+      viewWidth: 300,
       slideHeight: 300,
-      videoImg: {
-        width: 300,
-        height: 300,
-      },
-      isShow: false,
-      src: null,
     };
   }
 
-  componentDidMount() {
-    this.updateViewWidth();
-    window.addEventListener('resize', this.updateViewWidth);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListner('resize', this.updateViewWidth);
-  }
-
-  onLoadVideoImg = () => {
-    this.updateViewWidth();
-  };
-
-  setActive = (i) => {
-    this.setState({ slideActive: i });
-  };
-
-  updateViewWidth = () => {
-    const el = document.getElementById('testimonials-view');
-    const { width } = el.getBoundingClientRect();
-    const e = document.getElementById('test');
-    const { height } = e.getBoundingClientRect();
-    const elImg = document.getElementById('img-video');
-    this.setState({
-      viewWidth: width,
-      slideActive: 0,
-      slideHeight: height,
-      videoImg: {
-        width: elImg.width,
-        height: elImg.height,
-      },
-    });
+  onLoadImg = () => {
+    const el = document.getElementById('teamImg-1');
+    const { height } = el.getBoundingClientRect();
+    this.setState({ slideHeight: height });
   };
 
   preSlide = () => {
@@ -86,45 +54,23 @@ export default class Testimonials extends Component {
     return this.setState({ slideActive: 0 });
   };
 
-  openVideo = (src) => this.setState({ isShow: true, src });
-
-  toggle = () => this.setState({ isShow: false });
-
   renderSlide = (i) => {
-    const { avatar, name, position, review, imgVideo, video } = text.listItems[
-      i
-    ];
-    const { width, height } = this.state.videoImg;
+    const { avatar, name, position } = text.listItems[i];
+    const { viewWidth } = this.state;
     return (
-      <View row id="testimonials-slide">
-        <View className="slide-content-left" id="test">
-          <div className="quote">{review}</div>
-          <View row className="testimonials-info">
-            <View>
-              <img alt={name} src={avatar} className="avatar" />
-            </View>
-            <View className="testimonials-name">
-              <p>{name}</p>
-              <p>{position}</p>
-            </View>
-          </View>
-        </View>
-        <View className="slide-content-right">
-          <View className="player-view" style={{ width, height }}>
-            <View className="circle">
-              <View className="play" onClick={() => this.openVideo(video)}>
-                <Icon name={ICONS.PLAY} color="#425CBB" size="16" />
-              </View>
-            </View>
-          </View>
-          <img
+      <Container width={viewWidth} id={`teamImg-${i}`}>
+        <ContainerBody>
+          <Image
             alt={name}
-            src={imgVideo}
-            id="img-video"
-            onLoad={this.onLoadVideoImg}
+            src={avatar}
+            onLoad={i === 0 ? this.onLoadImg : false}
           />
-        </View>
-      </View>
+        </ContainerBody>
+        <ContainerFooter>
+          <Name>{name}</Name>
+          <Position>{position}</Position>
+        </ContainerFooter>
+      </Container>
     );
   };
 
@@ -151,10 +97,10 @@ export default class Testimonials extends Component {
               style={{
                 transform: `translateX(-${slideActive *
                   viewWidth}px) translateZ(0)`,
-                width: viewWidth * numberOfSlide.length,
+                width: viewWidth * text.listItems.length,
               }}
             >
-              {numberOfSlide.map((item, i) => (
+              {text.listItems.map((item, i) => (
                 <div
                   key={item[i]}
                   style={{
@@ -179,7 +125,6 @@ export default class Testimonials extends Component {
             </nav>
           </div>
         </SectionBody>
-        <Video toggle={this.toggle} isShow={isShow} src={src} />
       </Section>
     );
   }
