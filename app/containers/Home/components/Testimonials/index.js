@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import Icon from 'components/Icon';
 import View from 'components/View';
 import { ICONS } from 'components/Icon/listIcon';
+import { Video } from './video';
+
 import {
   SectionHeader,
   Line,
   H2,
   SectionBody,
   Section,
-  SectionDescription,
+  SectionDescription
 } from '../index';
 
 import text from './text';
@@ -23,8 +25,8 @@ export default class Testimonials extends Component {
       slideHeight: 300,
       videoImg: {
         width: 300,
-        height: 300,
-      },
+        height: 300
+      }
     };
   }
 
@@ -41,7 +43,7 @@ export default class Testimonials extends Component {
     this.updateViewWidth();
   };
 
-  setActive = (i) => {
+  setActive = i => {
     this.setState({ slideActive: i });
   };
 
@@ -57,8 +59,8 @@ export default class Testimonials extends Component {
       slideHeight: height,
       videoImg: {
         width: elImg.width,
-        height: elImg.height,
-      },
+        height: elImg.height
+      }
     });
   };
 
@@ -82,7 +84,7 @@ export default class Testimonials extends Component {
     return this.setState({ slideActive: 0 });
   };
 
-  renderSlide = (i) => {
+  renderSlide = i => {
     const { avatar, name, position, review, imgVideo } = text.listItems[i];
     const { width, height } = this.state.videoImg;
     switch (i) {
@@ -142,7 +144,7 @@ export default class Testimonials extends Component {
             className="slider"
             style={{
               width: '100%',
-              height: `${this.state.slideHeight}px`,
+              height: `${this.state.slideHeight}px`
             }}
           >
             <div
@@ -150,7 +152,7 @@ export default class Testimonials extends Component {
               style={{
                 transform: `translateX(-${slideActive *
                   viewWidth}px) translateZ(0)`,
-                width: viewWidth * numberOfSlide.length,
+                width: viewWidth * numberOfSlide.length
               }}
             >
               {numberOfSlide.map((item, i) => (
@@ -158,7 +160,7 @@ export default class Testimonials extends Component {
                   key={item[i]}
                   style={{
                     width: viewWidth,
-                    left: viewWidth * i,
+                    left: viewWidth * i
                   }}
                   className={slideActive === i ? 'slide active' : 'slide'}
                 >
@@ -178,6 +180,7 @@ export default class Testimonials extends Component {
             </nav>
           </div>
         </SectionBody>
+        <Video />
       </Section>
     );
   }
