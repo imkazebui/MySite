@@ -6,14 +6,14 @@ import {
   BtnChangeSlide,
   ViewSlider,
   ViewSlideDescribe,
-  SlideTitle
+  SlideTitle,
 } from '../index';
 
 const slider1 = require('./slider1.jpg');
 const slider2 = require('./slider2.jpg');
 const slider3 = require('./slider3.jpg');
 
-const scrollbarWidth = navigator.appVersion.indexOf('Win') != -1 ? 17 : 15;
+const scrollbarWidth = navigator.appVersion.indexOf('Win') !== -1 ? 17 : 15;
 
 export default class Slider extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class Slider extends Component {
     this.state = {
       numberOfSlide: [1, 2, 3],
       slideActive: 0,
-      viewWidth: window.innerWidth - scrollbarWidth
+      viewWidth: window.innerWidth - scrollbarWidth,
     };
   }
 
@@ -34,14 +34,14 @@ export default class Slider extends Component {
     window.removeEventListner('resize', this.updateViewWidth);
   }
 
-  setActive = i => {
+  setActive = (i) => {
     this.setState({ slideActive: i });
   };
 
   updateViewWidth = () => {
     this.setState({
       viewWidth: window.innerWidth - scrollbarWidth,
-      slideActive: 0
+      slideActive: 0,
     });
   };
 
@@ -65,7 +65,7 @@ export default class Slider extends Component {
     return this.setState({ slideActive: 0 });
   };
 
-  renderSlide = i => {
+  renderSlide = (i) => {
     switch (i) {
       case 0:
         return (
@@ -133,7 +133,7 @@ export default class Slider extends Component {
         <div
           className="slider"
           style={{
-            width: viewWidth
+            width: viewWidth,
           }}
         >
           <div
@@ -141,7 +141,7 @@ export default class Slider extends Component {
             style={{
               transform: `translateX(-${slideActive *
                 viewWidth}px) translateZ(0)`,
-              width: viewWidth * numberOfSlide.length
+              width: viewWidth * numberOfSlide.length,
             }}
           >
             {numberOfSlide.map((item, i) => (
@@ -149,7 +149,7 @@ export default class Slider extends Component {
                 key={item[i]}
                 style={{
                   width: viewWidth,
-                  left: viewWidth * i
+                  left: viewWidth * i,
                 }}
                 className={slideActive === i ? 'slide active' : 'slide'}
               >

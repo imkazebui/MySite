@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Modal = styled.div`
   display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 99999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -31,14 +31,14 @@ const ModalBody = styled.div`
 `;
 
 const CloseBtn = styled.span`
-  color: white;
+  color: rgba(221, 221, 221, 0.4);
   float: right;
   font-size: 28px;
   font-weight: bold;
 
   &:hover,
   &:focus {
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
   }

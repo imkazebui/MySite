@@ -10,7 +10,7 @@ import {
   H2,
   SectionBody,
   Section,
-  SectionDescription
+  SectionDescription,
 } from '../index';
 
 import text from './text';
@@ -25,8 +25,10 @@ export default class Testimonials extends Component {
       slideHeight: 300,
       videoImg: {
         width: 300,
-        height: 300
-      }
+        height: 300,
+      },
+      isShow: false,
+      src: null,
     };
   }
 
@@ -43,7 +45,7 @@ export default class Testimonials extends Component {
     this.updateViewWidth();
   };
 
-  setActive = i => {
+  setActive = (i) => {
     this.setState({ slideActive: i });
   };
 
@@ -59,8 +61,8 @@ export default class Testimonials extends Component {
       slideHeight: height,
       videoImg: {
         width: elImg.width,
-        height: elImg.height
-      }
+        height: elImg.height,
+      },
     });
   };
 
@@ -84,53 +86,50 @@ export default class Testimonials extends Component {
     return this.setState({ slideActive: 0 });
   };
 
-  renderSlide = i => {
-    const { avatar, name, position, review, imgVideo } = text.listItems[i];
+  renderSlide = (i) => {
+    const { avatar, name, position, review, imgVideo, video } = text.listItems[
+      i
+    ];
     const { width, height } = this.state.videoImg;
-    switch (i) {
-      case 0:
-        return (
-          <View row id="testimonials-slide">
-            <View className="slide-content-left" id="test">
-              <div className="quote">{review}</div>
-              <View row className="testimonials-info">
-                <View>
-                  <img alt={name} src={avatar} className="avatar" />
-                </View>
-                <View className="testimonials-name">
-                  <p>{name}</p>
-                  <p>{position}</p>
-                </View>
-              </View>
+    return (
+      <View row id="testimonials-slide">
+        <View className="slide-content-left" id="test">
+          <div className="quote">{review}</div>
+          <View row className="testimonials-info">
+            <View>
+              <img alt={name} src={avatar} className="avatar" />
             </View>
-            <View className="slide-content-right">
-              <View className="player-view" style={{ width, height }}>
-                <View className="circle">
-                  <View className="play">
-                    <Icon name={ICONS.PLAY} color="#425CBB" size="16" />
-                  </View>
-                </View>
-              </View>
-              <img
-                alt={name}
-                src={imgVideo}
-                id="img-video"
-                onLoad={this.onLoadVideoImg}
-              />
+            <View className="testimonials-name">
+              <p>{name}</p>
+              <p>{position}</p>
             </View>
           </View>
-        );
-      case 1:
-        return 2;
-      case 2:
-        return 3;
-      default:
-        return 1;
-    }
+        </View>
+        <View className="slide-content-right">
+          <View className="player-view" style={{ width, height }}>
+            <View className="circle">
+              <View className="play" onClick={() => this.openVideo(video)}>
+                <Icon name={ICONS.PLAY} color="#425CBB" size="16" />
+              </View>
+            </View>
+          </View>
+          <img
+            alt={name}
+            src={imgVideo}
+            id="img-video"
+            onLoad={this.onLoadVideoImg}
+          />
+        </View>
+      </View>
+    );
   };
 
+  toggle = () => this.setState({ isShow: false });
+
+  openVideo = (src) => this.setState({ isShow: true, src });
+
   render() {
-    const { numberOfSlide, slideActive, viewWidth } = this.state;
+    const { numberOfSlide, slideActive, viewWidth, src, isShow } = this.state;
     return (
       <Section>
         <SectionHeader>
@@ -144,7 +143,7 @@ export default class Testimonials extends Component {
             className="slider"
             style={{
               width: '100%',
-              height: `${this.state.slideHeight}px`
+              height: `${this.state.slideHeight}px`,
             }}
           >
             <div
@@ -152,7 +151,7 @@ export default class Testimonials extends Component {
               style={{
                 transform: `translateX(-${slideActive *
                   viewWidth}px) translateZ(0)`,
-                width: viewWidth * numberOfSlide.length
+                width: viewWidth * numberOfSlide.length,
               }}
             >
               {numberOfSlide.map((item, i) => (
@@ -160,7 +159,7 @@ export default class Testimonials extends Component {
                   key={item[i]}
                   style={{
                     width: viewWidth,
-                    left: viewWidth * i
+                    left: viewWidth * i,
                   }}
                   className={slideActive === i ? 'slide active' : 'slide'}
                 >
@@ -180,7 +179,7 @@ export default class Testimonials extends Component {
             </nav>
           </div>
         </SectionBody>
-        <Video />
+        <Video toggle={this.toggle} isShow={isShow} src={src} />
       </Section>
     );
   }
