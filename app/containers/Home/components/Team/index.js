@@ -12,6 +12,7 @@ import {
   Name,
   Position,
   OverLay,
+  Social,
 } from './styles';
 
 import text from './text';
@@ -64,7 +65,42 @@ export default class Testimonials extends Component {
             src={avatar}
             onLoad={i === 0 ? this.onLoadImg : false}
           />
-          <OverLay />
+          <OverLay>
+            <Social>
+              <a>
+                <Icon
+                  name={ICONS.FACEBOOK}
+                  viewBox="32"
+                  size="14"
+                  color="white"
+                />
+              </a>
+              <a>
+                <Icon
+                  name={ICONS.GOOGLE}
+                  viewBox="32"
+                  size="14"
+                  color="white"
+                />
+              </a>
+              <a>
+                <Icon
+                  name={ICONS.PINTEREST}
+                  viewBox="32"
+                  size="14"
+                  color="white"
+                />
+              </a>
+              <a>
+                <Icon
+                  name={ICONS.TWITTER}
+                  viewBox="32"
+                  size="14"
+                  color="white"
+                />
+              </a>
+            </Social>
+          </OverLay>
         </ContainerBody>
         <div>
           <Name>{name}</Name>
