@@ -1,7 +1,7 @@
 export default {
   listItems: [
     {
-      name: 'AWWARDS',
+      name: 'AWARDS',
       statistics: '12,345',
       icon: 'MEDAL',
     },

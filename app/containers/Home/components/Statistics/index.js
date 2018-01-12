@@ -11,8 +11,8 @@ export const Statistics = () => (
     {text.listItems.map((item) => (
       <Container key={item.name}>
         <Icon name={ICONS[item.icon]} viewBox="32" size="40" color="white" />
-        <Numbers>{item.name}</Numbers>
-        <Texts>{item.statistics}</Texts>
+        <Numbers>{item.statistics}</Numbers>
+        <Texts>{item.name}</Texts>
       </Container>
     ))}
   </Background>

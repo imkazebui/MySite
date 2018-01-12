@@ -30,6 +30,18 @@ export const Container = styled.div`
   }
 `;
 
-export const Numbers = styled.p``;
+export const Numbers = styled.p`
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  color: white;
+  margin: 15px 0;
+`;
 
-export const Texts = styled.p``;
+export const Texts = styled.p`
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+`;
