@@ -8,17 +8,17 @@ export default {
     {
       name: 'SUCCESSFUL PROJECT',
       statistics: '12,345',
-      icon: 'NOTE_CHECKED',
+      icon: 'DOCUMENT_CODE',
     },
     {
       name: 'OUR CUSTOMERS',
       statistics: '12,345',
-      icon: 'HEART',
+      icon: 'USER',
     },
     {
       name: 'NEW UPDATES',
       statistics: '12,345',
-      icon: 'MEDAL',
+      icon: 'STACK',
     },
   ],
 };
