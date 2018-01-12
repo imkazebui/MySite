@@ -6,7 +6,7 @@ import ChooseUs from './components/ChooseUs';
 import GreatePosibilities from './components/GreatePosibilities';
 import Testimonials from './components/Testimonials';
 import Team from './components/Team';
-import { Statistics } from './components/Statistics';
+import Statistics from './components/Statistics';
 
 // eslint-disable-line react/prefer-stateless-function
 export class HomePage extends React.PureComponent {
