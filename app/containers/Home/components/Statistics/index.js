@@ -18,12 +18,15 @@ export default class Statistics extends Component {
   }
 
   componentDidMount() {
+    this.getBounding();
+    document.addEventListener('scroll', this.scrollEvent);
+  }
+
+  getBounding = () => {
     const el = document.getElementById('statistics').getBoundingClientRect();
     console.log('el', el);
     this.setState({ top: el.top, height: el.height });
-
-    document.addEventListener('scroll', this.scrollEvent);
-  }
+  };
 
   scrollEvent = (e) => {
     const { top, height, isCounter, text } = this.state;
