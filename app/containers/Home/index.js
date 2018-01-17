@@ -7,6 +7,7 @@ import GreatePosibilities from './components/GreatePosibilities';
 import Testimonials from './components/Testimonials';
 import Team from './components/Team';
 import Statistics from './components/Statistics';
+import Gallery from './components/Gallery';
 
 // eslint-disable-line react/prefer-stateless-function
 export class HomePage extends React.PureComponent {
@@ -21,8 +22,9 @@ export class HomePage extends React.PureComponent {
         <ChooseUs />
         <GreatePosibilities />
         <Testimonials />
-        <Team />
         <Statistics />
+        <Team />
+        <Gallery />
       </div>
     );
   }
